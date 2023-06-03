@@ -19,6 +19,7 @@ output = 'output'
 if not os.path.isdir(output):
     os.mkdir(output)
 
+loop = 1
 while 1:
     filename = uuid.uuid4().hex + '.npy'
     file_name = os.path.join(output, filename)
@@ -26,6 +27,7 @@ while 1:
     while not len(text) > 0:
         text = random_split_chunk(loaded_data)  # Obtain a short chunk of text
         text = text.strip()
-    print('Generating semantics for text:', text)
+    print(f'{loop} Generating semantics for text:', text)
+    loop+=1 
     semantics = text_to_semantic(text, temp=round(random.uniform(0.6, 0.8), ndigits=2))
     numpy.save(file_name, semantics)
