@@ -9,7 +9,7 @@ from bark.generation import load_model
 
 from data import load_books, random_split_chunk
 
-loaded_data = load_books()
+loaded_data = load_books(True)
 
 print('Loading semantics model')
 load_model(use_gpu=True, use_small=False, force_reload=False, model_type='text')
