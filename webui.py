@@ -453,7 +453,7 @@ while run_server:
 
         restart_server = False
         try:
-            barkgui.queue().launch(inbrowser=autolaunch, server_name=server_name, server_port=server_port, share=settings.server_share, prevent_thread_lock=True)
+            barkgui.queue().launch(inbrowser=autolaunch, server_name=server_name, server_port=server_port, share=True, prevent_thread_lock=True)
         except:
             restart_server = True
             run_server = False
